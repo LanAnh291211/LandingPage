@@ -1,0 +1,11 @@
+/* Footer.module.css */
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust the height as needed */
+}
+.footer img {
+    margin: 0 16px; /* Add space between images */
+}

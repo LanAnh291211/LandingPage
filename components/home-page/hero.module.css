@@ -1,0 +1,48 @@
+.hero {
+  padding: 128px 5% 150px 15%;
+}
+
+.image {
+  width: 70%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.image img {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height:100%;
+}
+.overlay{
+  display: flex;
+}
+.content p {
+  font-size: 54px!important;
+  color: #E1FDFF!important;
+  font-weight: 300px!important;
+  
+}
+.hero .content{
+  padding-right: 8%;
+}
+.hero button {
+  border-radius: 100px;
+  font-size: 16px;
+  padding: 15px 100px;
+  color: #3a16a6;
+  background-color: #fff;
+  border: none;
+}
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
+
+  .overlay{
+    flex-direction: column-reverse;
+  }
+
+}
+
+

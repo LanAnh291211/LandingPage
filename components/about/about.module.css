@@ -1,0 +1,43 @@
+.about{
+    margin-top: 304px!important;
+}
+.about h1{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+.about p{
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    word-wrap: break-word;
+    padding-left: 4%;
+        
+}
+/* Footer.module.css */
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    height: 100px; /* Adjust the height as needed */
+    position: relative; /* Remove any position property that makes it fixed */
+    bottom: 0; /* Remove any bottom property that fixes it at the bottom of the screen */
+}
+.footer img {
+    margin: 0 10px; /* Add space between images */
+    width: 50px; /* Adjust the width of the images */
+    height: 50px; /* Adjust the height of the images */
+}
+@media (max-width: 768px) {
+    .about {
+        width: 90%;
+      }
+    .footer img {
+        margin: 10px 0; /* Add space between images */
+    }
+}
+
+
