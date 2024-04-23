@@ -1,0 +1,17 @@
+.grid {
+    padding-top: 50px;
+    place-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 768px;
+    flex-wrap: wrap;
+    display: flex;
+    list-style-type: none;
+}
+@media (max-width: 768px) {
+    .grid {
+        max-width: 384px;
+        width: 100%;
+        
+    }
+}
