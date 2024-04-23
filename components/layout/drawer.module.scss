@@ -6,90 +6,81 @@
   position: fixed;
   left: 0;
   z-index: 1;
+}
+.draw {
+  max-width: 600px;
+  width: 100%;
+  height: 400px;
+  background-color: #3a16a6;
+  z-index: 9999;
+  top: 0;
+  position: absolute;
+  left: 0;
+}
+.navdraw .list li {
+  margin-top: 30px;
+  margin-left: 20px;
+  padding: 8px;
+}
+
+.head {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+}
+.head button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  height: 40px;
+  margin-top: 24px;
+  margin-left: 24px;
+}
+.head .logo {
+  margin-top: 24px;
+  height: 56px;
+  margin-right: 20px;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
   }
-  .draw{
-      max-width: 600px;
-      width: 100%;
-      height: 400px;
-      background-color: #3a16a6;
-      z-index: 9999;
-      top: 0;
-      position: absolute;
-      left: 0;
-     
-  
+  100% {
+    transform: translateX(0);
   }
-  .navdraw .list li{
-    margin-top: 30px;
-    margin-left: 20px;
-    padding: 8px;
-  
+}
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
   }
-  
-  .head{
-      width: 100%;
-      height: 64px;
-      display: flex;
-      justify-content: space-between;
-      
+  to {
+    transform: translateX(-100%);
   }
-  .head button{
-      background-color: transparent;
-      border: none;
-      color: white;
-      height: 40px;
-      margin-top: 24px;
-      margin-left: 24px;
-    
+}
+
+.open {
+  display: block;
+  animation: slideIn 1s ease;
+}
+.close {
+  display: none;
+  animation: slideOut 1s ease-in-out;
+  opacity: 0;
+}
+@media (min-width: 376px) and (max-width: 1170px) {
+  .draw {
+    width: 100%;
   }
-  .head .logo{
-      margin-top: 24px;
-      height: 56px;
-      margin-right: 20px;
-  
+}
+@media (max-width: 375px) {
+  .draw {
+    width: 100%;
   }
-  .list {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    @keyframes slideIn {
-      0% {
-        transform: translateX(-100%);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-    @keyframes slideOut {
-      0% {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-100%);
-      }
-      
-    }
-    
-    .open {
-      display: block;
-      animation: slideIn 1s ease;
-  }
-    .close {
-      display: none;
-animation: slideOut 1s ease-in-out;
-opacity: 0;
-    }
-    @media  (min-width: 376px) and (max-width: 1170px)  {
-      .draw{
-         width: 100%;
-      }
-  
-    
-    }
-    @media (max-width: 375px) {
-      .draw{
-        width: 100%;
-     }
-    }
+}

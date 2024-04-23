@@ -1,34 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import classes from './contact-form.module.scss';
-import Notification from '../ui/notification';
-import Link from 'next/link';
-import React from 'react';
+import classes from "./contact-form.module.scss";
+import Notification from "../ui/notification";
+import Link from "next/link";
+import React from "react";
 
-async function sendContactData(contactDetails :any) {
-  const response = await fetch('/api/contact', {
-    method: 'POST',
+async function sendContactData(contactDetails: any) {
+  const response = await fetch("/api/contact", {
+    method: "POST",
     body: JSON.stringify(contactDetails),
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   });
 
   const data = await response.json();
 
   if (!response.ok) {
-    throw new Error(data.message || 'Something went wrong!');
+    throw new Error(data.message || "Something went wrong!");
   }
 }
 
 function ContactForm() {
-  const [enteredEmail, setEnteredEmail] = useState('');
-  const [enteredPassword, setEnteredPassword] = useState('');
+  const [enteredEmail, setEnteredEmail] = useState("");
+  const [enteredPassword, setEnteredPassword] = useState("");
   const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
   const [requestError, setRequestError] = useState();
 
   useEffect(() => {
-    if (requestStatus === 'success' || requestStatus === 'error') {
+    if (requestStatus === "success" || requestStatus === "error") {
       const timer = setTimeout(() => {
         setRequestStatus(undefined);
         setRequestError(undefined);
@@ -38,49 +38,49 @@ function ContactForm() {
     }
   }, [requestStatus]);
 
-  async function sendMessageHandler(event :any) {
+  async function sendMessageHandler(event: any) {
     event.preventDefault();
 
     // optional: add client-side validation
 
-    setRequestStatus('pending' as any);
+    setRequestStatus("pending" as any);
 
     try {
       await sendContactData({
         email: enteredEmail,
         name: enteredPassword,
       });
-      setRequestStatus('success' as any);
-      setEnteredEmail('');
-      setEnteredPassword('');
-    } catch (error :any) {
-      setRequestError(error.message || 'Something went wrong!');
-      setRequestStatus('error' as any);
+      setRequestStatus("success" as any);
+      setEnteredEmail("");
+      setEnteredPassword("");
+    } catch (error: any) {
+      setRequestError(error.message || "Something went wrong!");
+      setRequestStatus("error" as any);
     }
   }
 
   let notification;
 
-  if (requestStatus === 'pending') {
+  if (requestStatus === "pending") {
     notification = {
-      status: 'pending',
-      title: 'Loading...',
-      message: 'Loading!',
+      status: "pending",
+      title: "Loading...",
+      message: "Loading!",
     };
   }
 
-  if (requestStatus === 'success') {
+  if (requestStatus === "success") {
     notification = {
-      status: 'success',
-      title: 'Success!',
-      message: 'Login successfully!',
+      status: "success",
+      title: "Success!",
+      message: "Login successfully!",
     };
   }
 
-  if (requestStatus === 'error') {
+  if (requestStatus === "error") {
     notification = {
-      status: 'error',
-      title: 'Error!',
+      status: "error",
+      title: "Error!",
       message: requestError,
     };
   }
@@ -88,18 +88,20 @@ function ContactForm() {
   return (
     <section className={classes.contact}>
       <div className={classes.heading}>
-        <p className={classes.title}>Sign in</p > 
-       < Link href='/'>
-       <img src='/images/site/close.svg' alt='contact' />
-       </Link>
-        </div>
+        <p className={classes.title}>Sign in</p>
+        <Link href="/">
+          <img src="/images/site/close.svg" alt="contact" />
+        </Link>
+      </div>
       <form className={classes.form} onSubmit={sendMessageHandler}>
         <div className={classes.controls}>
           <div className={classes.control}>
-            <label className={classes.label} htmlFor='email'>Email</label>
+            <label className={classes.label} htmlFor="email">
+              Email
+            </label>
             <input
-              type='email'
-              id='email'
+              type="email"
+              id="email"
               required
               value={enteredEmail}
               onChange={(event) => setEnteredEmail(event.target.value)}
@@ -107,28 +109,27 @@ function ContactForm() {
           </div>
         </div>
         <div className={classes.control}>
-            <label htmlFor='name'>Password</label>
-            <input
-              type='text'
-              id='name'
-              required
-              value={enteredPassword}
-              onChange={(event) => setEnteredPassword(event.target.value)}
-            />
-          </div>
-        <Link href='/' className={classes.forgot}>
+          <label htmlFor="name">Password</label>
+          <input
+            type="text"
+            id="name"
+            required
+            value={enteredPassword}
+            onChange={(event) => setEnteredPassword(event.target.value)}
+          />
+        </div>
+        <Link href="/" className={classes.forgot}>
           Forgot Password
-          </Link>
-        
+        </Link>
 
         <div className={classes.actions}>
           <button>Sign in</button>
         </div>
       </form>
-      <p  className={classes.no_account}>Don’t have an account? </p>
-      <Link href='/signup' className={classes.signup}>
-          Sign Up
-          </Link>
+      <p className={classes.no_account}>Don’t have an account? </p>
+      <Link href="/signup" className={classes.signup}>
+        Sign Up
+      </Link>
       {notification && (
         <Notification
           status={notification.status}

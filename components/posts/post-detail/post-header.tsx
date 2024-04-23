@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import classes from './post-header.module.scss';
-import React from 'react';
+import classes from "./post-header.module.scss";
+import React from "react";
 
-function PostHeader(props : any) {
+function PostHeader(props: any) {
   const { title, image } = props;
 
   return (

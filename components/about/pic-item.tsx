@@ -1,5 +1,5 @@
-import React from 'react';
-import classes from './pic-item.module.scss'; // Import the CSS file
+import React from "react";
+import classes from "./pic-item.module.scss"; // Import the CSS file
 
 interface PicItemProps {
     pic: string;

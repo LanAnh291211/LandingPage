@@ -1,26 +1,21 @@
-.about{
-    margin-top: 304px!important;
+.about {
+    margin-top: 304px !important;
 }
-.about .title{
+.about .title {
     font-size: 42px;
     color: white;
     text-align: center;
     font-weight: 275;
-
 }
-.about p{
+.about p {
     font-size: 22px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: white;
     text-align: center;
     margin: 0;
     word-wrap: break-word;
     padding: 0 4vw;
     font-weight: 275;
-    
-    
-
-        
 }
 /* Footer.module.scss */
 .footer {
@@ -39,10 +34,7 @@
     height: 50px; /* Adjust the height of the images */
 }
 @media (max-width: 768px) {
-    
     .footer img {
         margin: 10px 0; /* Add space between images */
     }
 }
-
-
