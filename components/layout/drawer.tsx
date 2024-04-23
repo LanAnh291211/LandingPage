@@ -2,7 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import classes from './drawer.module.scss';
 
-const Drawer = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
+const Drawer = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void  }) => {
+
 
   return (
     <div className={`${classes.drawe} ${isOpen ? classes.open : classes.close}`}>
@@ -16,16 +17,16 @@ const Drawer = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) =
       <nav className={classes.navdraw}>
         <ul className={classes.list}>
           <li>
-            <Link href='/posts'>Home</Link>
+            <Link href='/posts' onClick={onClose}>Home</Link>
           </li>
           <li>
-            <Link href='/contact'>Let’s Shuffle</Link>
+            <Link href='/contact' onClick={onClose}>Let’s Shuffle</Link>
           </li>
           <li>
-            <Link href='/contact'>Buy Card</Link>
+            <Link href='/contact'onClick={onClose}>Buy Card</Link>
           </li>
           <li>
-            <Link href='/contact'>Profile</Link>
+            <Link href='/contact'onClick={onClose}>Profile</Link>
           </li>
         </ul>
       </nav>

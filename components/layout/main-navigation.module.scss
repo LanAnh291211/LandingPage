@@ -21,20 +21,27 @@
   padding: 0;
 }
 
-.header li {
-  margin: 0 var(--size-4);
+.header .l1  {
+  width: 88px;
+}
+.header .l2  {
+  width: 132px;
+}
+.header .l3  {
+  width: 103px;
 }
 
 .header a {
-  color: var(--color-grey-100);
+  color: #E1FDFF;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .header a:hover,
 .header a:active,
 .header a.active {
   color: #79F5FF;
+  font-weight: 500;
   
 }
 

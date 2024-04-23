@@ -7,12 +7,12 @@ function MainNavigation() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const toggleDrawer = () => {
     setIsDrawerOpen((prevState) => !prevState);
+
   };
   const handleDrawerClose = () => {
-
     setIsDrawerOpen(false);
-
   };
+
   return (
     <header className={classes.header}>
       <div className={classes.menu} onClick={toggleDrawer}>
@@ -20,14 +20,14 @@ function MainNavigation() {
       </div>
       <nav className={classes.menunav}>
         <ul>
-          <li>
-            <Link href='/posts'>Home</Link>
+          <li className={classes.l1}>
+            <Link href='/posts' >Home</Link>
           </li>
-          <li>
+          <li className={classes.l2}>
             <Link href='/contact'>Let’s Shuffle</Link>
           </li>
-          <li>
-            <Link href='/contact'>Buy Card</Link>
+          <li className={classes.l3}>
+            <Link href='/contact' >Buy Card</Link>
           </li>
           <li>
             <Link href='/contact'>Profile</Link>
